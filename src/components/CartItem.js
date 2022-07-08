@@ -7,8 +7,12 @@ const CartItem = ({item}) => {
     const dispatch = useDispatch();
     const cart = useSelector(state=>state.cart)
     const restItems =cart.filter((ele, index) => {
-        console.log(ele.id , item.id)
-        if (ele.id === item.id) return index;
+        let indexNum;
+        if (ele.id === item.id) {
+            indexNum=index;
+        }
+        return indexNum;
+        
     }) 
 
     return (
