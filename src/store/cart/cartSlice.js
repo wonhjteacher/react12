@@ -11,7 +11,7 @@ export const cartSlice = createSlice({
         action.type="SET_ADD_ITEM"
     },
     deleteCart: (state,action) => {
-        
+        state.splice(action.payload,1);
         action.type="SET_DELETE_ITEM"
     },
    
