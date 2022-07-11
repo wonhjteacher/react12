@@ -1,5 +1,6 @@
 import { configureStore,combineReducers } from '@reduxjs/toolkit'
 import cartSlice from './cart/cartSlice'
+import userSlice from './user/userSlice'
 import storage from "redux-persist/lib/storage"; //로컬스토리지 
 //import storageSession from"redux-persist/lib/storage/session"; //세션스토리지
 import { persistReducer } from 'redux-persist'; 
@@ -12,8 +13,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   cart:cartSlice,
+  user:userSlice
 })
-
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 // rootReducer와 persist를 묶어서 사용.
 //redux-persist를 사용해서  로컬스토리지에 state 저장하면 페이지가 새로고침 되어도 initialState 값이
